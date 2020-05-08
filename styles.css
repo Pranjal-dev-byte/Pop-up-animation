@@ -1,0 +1,90 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+	color: black;
+	background-color: black;
+}
+h1 {
+	padding: 0px;
+	margin: 0px;
+}
+p {
+	font-size: 1.2em;
+}
+.content {
+	background-color: hsl(33, 59%, 72%);
+	border: 2px solid black;
+	width: 40vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding: 2em;
+}
+.cross {
+	text-align: center;
+	background-color: black;
+	color: aliceblue;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	border-radius: 11px;
+	width: 22px;
+	height: 22px;
+	cursor: pointer;
+}
+input[type="email"] {
+	border-radius: 10px 0px 0px 10px;
+	border: 0;
+	padding: 12px;
+	width: 20em;
+}
+button {
+	background-color: hsl(17, 59%, 41%);
+	color: white;
+	font-size: 15px;
+	border-radius: 0 10px 10px 0;
+	border: 0;
+	margin-left: -5px;
+	padding: 12px;
+}
+.is-hidden {
+	display: none;
+}
+/* POP-UP Animation Styles  */
+#content {
+	top: -440px;
+	transform-origin: 10px 10px; /*Relocates the origin to 10px across||10px down*/
+	animation: drop .6s ease forwards, tilt .8s ease forwards 1.2s;
+}
+@keyframes drop {
+	0% {
+		transform: translateY(0px);
+		opacity: 0;
+	}
+	50% {
+		transform: translateY(500px);
+	}
+	100% {
+		transform: translateY(440px);
+		opacity: 1;
+	}
+}
+@keyframes tilt {
+	0% {
+		transform-origin: 2px;
+		transform: translateY(440px) rotateZ(0deg); /*We gotta mention the translateY as it will me overwritten otherwise*/
+	}
+	40% {
+		transform: translateY(440px) rotateZ(90deg);
+	}
+	70% {
+		transform: translateY(440px) rotateZ(82deg);
+	}
+	100% {
+		transform: translateY(440px) rotateZ(90deg);
+	}
+}
